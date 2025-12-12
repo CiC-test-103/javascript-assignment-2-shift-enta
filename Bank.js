@@ -9,7 +9,7 @@ class Bank {
   // Example: createAccount(name, initialDeposit)
   createAccount(name, initialDeposit = 0) {
     const account = new Account(name, initialDeposit);
-    this.accounts.push(this.account);
+    this.accounts.push(account);
     return account;
   }
 }
@@ -26,11 +26,11 @@ class Account {
   // Example: deposit(amount)
   deposit(amount) {
     if (amount <= 0) {
-      throw new Error("Deposit must be positive");
+      throw new Error("Deposit  must be positive");
     }
     this.balance += amount;
     this.transactionHistory.push({
-      transactionType: "DEPOSIT",
+      transactionType: "Deposit",
       amount: amount,
     });
     return this.balance;
@@ -40,14 +40,14 @@ class Account {
   // Example: withdraw(amount)
   withdraw(amount) {
     if (amount <= 0) {
-      throw new Error("withdrawal must be positive");
+      throw new Error("Withdrawal must be positive");
     }
     if (amount > this.balance) {
-      throw new Error("Inssuficient funds");
+      throw new Error("Insufficient funds");
     }
     this.balance -= amount;
     this.transactionHistory.push({
-      transactionType: "Withdraw",
+      transactionType: "Withdrawal",
       amount: amount,
     });
   }
@@ -59,11 +59,11 @@ class Account {
       throw new Error("Transfer must be positive");
     }
     if (amount > this.balance) {
-      throw new Error("Insuficient funds");
+      throw new Error("Insufficient funds");
     }
     this.balance -= amount;
     this.transactionHistory.push({
-      transactionType: "transfer",
+      transactionType: "Transfer",
       amount: amount,
       to: recipientAccount.name,
     });
