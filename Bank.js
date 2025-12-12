@@ -54,7 +54,7 @@ class Account {
   // example data to be stored in transactionHistory { transactionType: 'Withdrawal', amount: 200 }
 
   // Example: transfer(amount, recipientAccount)
-  transfer(amount) {
+  transfer(amount, recipientAccount) {
     if (amount <= 0) {
       throw new Error("Transfer must be positive");
     }
